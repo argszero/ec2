@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan("org.argszero.ec2")
+@ComponentScan(value = "org.argszero.ec2")
 public class Ec2Configuration {
 }

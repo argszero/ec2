@@ -1,0 +1,9 @@
+body {
+    background-color:black;
+    color:silver;
+    font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif";
+}
+input.text {
+    margin-bottom:12px;
+    padding: .4em;
+}
