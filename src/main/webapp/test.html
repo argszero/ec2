@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function test(value){
+            document.getElementById("a2").value=value;
+        }
+        function test2(){
+            test('abcd');
+        }
+    </script>
+</head>
+<body>
+<input id="a1"/>
+<input id="a2"/>
+<input id="a3"/>
+<button onclick="test2()">aaa</button>
+</body>
+</html>
