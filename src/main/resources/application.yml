@@ -2,4 +2,4 @@ http:
     mappers:
         jsonPrettyPrint: true
 theBigBook:
-    rootDir:/home/ec2-user/app/ec2/theBigBook
+    rootDir: /home/ec2-user/app/ec2/theBigBook
