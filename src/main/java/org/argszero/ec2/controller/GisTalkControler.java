@@ -26,11 +26,11 @@ public class GisTalkControler {
         return true;
     }
 
-    public static void main(String[] args) throws IOExcmm eption {
+    public static void main(String[] args) throws IOException {
         BTree bTree = new BTree(new File("/home/shaoaq/tmp/t8/t"), "aaaa", 1024, 256, new RecordComparator() {
             @Override
             public int compareBTreeValues(byte[] key, byte[] data, int offset, int length) {
-                ByteArrayUtil.compareRegion(key,0,data,offset,8m )
+                ByteArrayUtil.compareRegion(key,0,data,offset,8);
                 return new String(key).substring(0,8).compareTo(new String(data,offset));
             }
         });
