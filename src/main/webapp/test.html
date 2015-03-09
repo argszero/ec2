@@ -12,12 +12,18 @@
     <script>
          $(document).ready(function(){
             setInterval(function(){
+                try{
                 $('#abc').val(window.backend.getPosition());
+                }catch(e){
+                    $('#abc').val(e);
+                }
+                $('#def').val(new Date().getTime());
             },1000);
         });
     </script>
 </head>
 <body>
 <span id="abc"></span>
+<span id="def"></span>
 </body>
 </html>
