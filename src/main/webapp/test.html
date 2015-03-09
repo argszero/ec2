@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"/>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+    <style>
+
+    </style>
     <script>
-        function test(value){
-            document.getElementById("a2").value=value;
-        }
-        function test2(){
-            test('abcd');
-        }
+         $(document).ready(function(){
+            setInterval(function(){
+                $('#abc').val(window.backend.getPosition());
+            },1000);
+        });
     </script>
 </head>
 <body>
-<input id="a1"/>
-<input id="a2"/>
-<input id="a3"/>
-<button onclick="test2()">aaa</button>
+<span id="abc"></span>
 </body>
 </html>
