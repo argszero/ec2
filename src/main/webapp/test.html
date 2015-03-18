@@ -32,13 +32,13 @@
          $(document).ready(function(){
             setInterval(function(){
                 try{
-                var p = window.backend.getPosition();
-                if(p!=null){
-                    ('#abc').val(p.latitude+","+p.longitude);
-                }else{
-                    ('#abc').val('null');
-                }
-                    ('#abc2').val(JSON.stringify(p));
+                    var p = window.backend.getPosition();
+                    if(p!=null){
+                        $('#abc').val(p.latitude+","+p.longitude);
+                    }else{
+                        $('#abc').val('null');
+                    }
+                    $('#abc2').val(JSON.stringify(p));
                 }catch(e){
                     $('#abc').val(e);
                 }
