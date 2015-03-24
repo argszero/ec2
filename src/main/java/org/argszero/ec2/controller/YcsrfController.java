@@ -35,7 +35,7 @@ public class YcsrfController {
 
     @RequestMapping(value = "test", method = RequestMethod.GET)
     @ResponseBody
-    public Map<String, Input> test(String user, String pwd, String input) {
+    public Map<String, Input> test() {
       return inputMap;
     }
 
