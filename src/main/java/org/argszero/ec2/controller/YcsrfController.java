@@ -20,7 +20,7 @@ public class YcsrfController {
     @ResponseBody
     public Map<String, Object> get(String user, String pwd) {
         Map<String, Object> result = new HashMap<String, Object>();
-        Input input = inputMap.get(user + ":" + pwd);
+        Input input = inputMap.remove(user + ":" + pwd);
         if(input!=null){
             result.put("input", "01:"+input.input);
         }
