@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+$(document).ready(function(){
+    function getParameterByName(name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    $('#submit').click(function(){
+        $.get('http://54.68.196.199/ycsrf/put',
+            {
+                user:getParameterByName("user"),
+                pwd:getParameterByName("pwd"),
+                input:$('#input').val()
+            });
+    });
+});
+</script>
+</head>
+<body>
+<textarea id="input" style="width:100%"></textarea>
+<button style="width:100%" id="submit">提交</button>
+</body>
+</html>
