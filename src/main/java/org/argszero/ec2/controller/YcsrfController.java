@@ -1,5 +1,7 @@
 package org.argszero.ec2.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,11 +16,13 @@ import java.util.Map;
 @Controller
 @RequestMapping("/ycsrf")
 public class YcsrfController {
+    private static Logger logger = LoggerFactory.getLogger(YcsrfController.class);
     private Map<String, Input> inputMap = new HashMap<String, Input>();
 
     @RequestMapping(value = "get", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> get(String user, String pwd) {
+        logger.info("user:"+user+",pwd:"+pwd);
         Map<String, Object> result = new HashMap<String, Object>();
         Input input;
         synchronized (inputMap) {
