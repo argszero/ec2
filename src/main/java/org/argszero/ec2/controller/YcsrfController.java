@@ -50,11 +50,6 @@ public class YcsrfController {
     }
 
 
-    public static void main(String[] args) {
-        String a = "{\n" +
-                "  \"input\" : \"01:abc\"\n" +
-                "}";
-        System.out.println(a.substring(15, a.length() - 3));
-    }
+
 }
 
