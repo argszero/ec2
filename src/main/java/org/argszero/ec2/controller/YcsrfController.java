@@ -20,9 +20,13 @@ public class YcsrfController {
     @ResponseBody
     public Map<String, Object> get(String user, String pwd) {
         Map<String, Object> result = new HashMap<String, Object>();
-        Input input = inputMap.remove(user + ":" + pwd);
-        if(input!=null){
-            result.put("input", "01:"+input.input);
+        Input input;
+        synchronized (inputMap) {
+            input = inputMap.remove(user + ":" + pwd);
+        }
+
+        if (input != null) {
+            result.put("input", "01:" + input.input);
         }
         return result;
     }
@@ -30,16 +34,18 @@ public class YcsrfController {
     @RequestMapping(value = "put", method = RequestMethod.GET)
     @ResponseBody
     public void get(String user, String pwd, String input) {
-        inputMap.put(user + ":" + pwd, new Input(input, System.currentTimeMillis()));
+        synchronized (inputMap) {
+            inputMap.put(user + ":" + pwd, new Input(input, System.currentTimeMillis()));
+        }
     }
 
     @RequestMapping(value = "test", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Input> test() {
-      return inputMap;
+        return inputMap;
     }
 
-    private static class Input {
+    public static class Input {
         private String input;
         private long time;
 
@@ -47,8 +53,23 @@ public class YcsrfController {
             this.input = input;
             this.time = time;
         }
-    }
 
+        public String getInput() {
+            return input;
+        }
+
+        public void setInput(String input) {
+            this.input = input;
+        }
+
+        public long getTime() {
+            return time;
+        }
+
+        public void setTime(long time) {
+            this.time = time;
+        }
+    }
 
 
 }
