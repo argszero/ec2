@@ -23,18 +23,37 @@
             margin-bottom:3px;
         }
         .guess{
+            position: fixed;
+            bottom:0px;
+            width:100%;
+        }
+        .guess div{
+        height:50px;
+        line-height:50px;
+        text-align:center;
+        background-color: #c3681f;
+        font-weight:bold;
+        font-size:27px;
+        letter-spacing:6px;
+        background-image:
+        linear-gradient(0deg, rgba(255,255,255,.07) 50%, transparent 50%),
         linear-gradient(0deg, rgba(255,255,255,.13) 50%, transparent 50%),
         linear-gradient(0deg, transparent 50%, rgba(255,255,255,.17) 50%),
         linear-gradient(0deg, transparent 50%, rgba(255,255,255,.19) 50%);
-        position: fixed;
-        bottom:0px;
-        background-color:black;
+        background-size: 210px, 320px, 220px, 153px;
+        margin-bottom:3px;
         }
-        .guess div{
-        height: 100px;
-        width: 100px;
-        color:white;
-        display:inline-block;
+        .guess div.item1{
+        -webkit-transform: scale3d(1, 1, 1) rotateZ(10deg) translateX(250px);
+        }
+        .guess div.item2{
+        -webkit-transform: scale3d(1, 1, 1) rotateZ(9deg) translateX(240px);
+        }
+        .guess div.item3{
+        -webkit-transform: scale3d(1, 1, 1) rotateZ(8deg) translateX(230px);
+        }
+        .guess div.item4{
+        -webkit-transform: scale3d(1, 1, 1) rotateZ(7deg) translateX(220px);
         }
     </style>
 </head>
@@ -82,10 +101,10 @@
     <div>啊啊啊啊啊</div>
 </div>
 <div class="guess">
-    <div>哦哦哦哦哦</div>
-    <div>呃呃呃呃呃</div>
-    <div>一一一一一</div>
-    <div>啊啊啊啊啊</div>
+    <div class="item1">唔唔唔唔唔</div>
+    <div class="item2">哦哦哦哦哦</div>
+    <div class="item3">呃呃呃呃呃</div>
+    <div class="item4">一一一一一</div>
 </div>
 </body>
 </html>
