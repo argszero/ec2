@@ -31,18 +31,19 @@
 
         .guess div.item1{
         -webkit-transform: scale3d(1, 1, 1) rotateZ(10deg) translateX(50px);
+        transition-duration: 2s;
         }
         .guess div.item2{
         -webkit-transform: scale3d(1, 1, 1) rotateZ(9deg) translateX(37px);
-        transition-duration: 1s;
+        transition-duration: 2s;
         }
         .guess div.item3{
         -webkit-transform: scale3d(1, 1, 1) rotateZ(8deg) translateX(28px);
-        transition-duration: 1s;
+        transition-duration: 2s;
         }
         .guess div.item4{
         -webkit-transform: scale3d(1, 1, 1) rotateZ(7deg) translateX(22px);
-        transition-duration: 1s;
+        transition-duration: 2s;
         }
     </style>
     <script>
@@ -50,7 +51,7 @@
             var get = function(){
                 $.get('http://54.68.196.199/bs/get',function(result){
                     for(var i=0;i<result.data.length;i++){
-                        $('.guess').append('<div class="item item'+(i+1)+'" isTarget="'+result.data[i].isTarget+'">'+result.data[i].item+'</div>');
+                        $('.guess').append('<div style="display: none;" class="item item'+(i+1)+'" isTarget="'+result.data[i].isTarget+'">'+result.data[i].item+'</div>');
                     }
                     $('.item').click(function(){
                         var index = 1;
@@ -79,6 +80,7 @@
                             get();
                         },0);
                     });
+                    $('.item').fadeIn();
                 });
             };
             get();
