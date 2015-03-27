@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,minimum-scale=1">
+    <title></title>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        body{margin:0px;}
+        .bamboo div{
+            height:40px;
+            line-height:40px;
+            text-align:center;
+            background-color: #c3681f;
+            font-weight:bold;
+            font-size:24px;
+            letter-spacing:6px;
+            background-image:
+                linear-gradient(0deg, rgba(255,255,255,.07) 50%, transparent 50%),
+                linear-gradient(0deg, rgba(255,255,255,.13) 50%, transparent 50%),
+                linear-gradient(0deg, transparent 50%, rgba(255,255,255,.17) 50%),
+                linear-gradient(0deg, transparent 50%, rgba(255,255,255,.19) 50%);
+            background-size: 210px, 320px, 220px, 153px;
+            margin-bottom:3px;
+        }
+        .guess-holder{height:250px;}
+        .guess{
+
+            width:100%;
+        }
+        .guess div{
+        height:50px;
+        line-height:50px;
+        text-align:center;
+        background-color: #c3681f;
+        font-weight:bold;
+        font-size:27px;
+        letter-spacing:6px;
+        background-image:
+        linear-gradient(0deg, rgba(255,255,255,.07) 50%, transparent 50%),
+        linear-gradient(0deg, rgba(255,255,255,.13) 50%, transparent 50%),
+        linear-gradient(0deg, transparent 50%, rgba(255,255,255,.17) 50%),
+        linear-gradient(0deg, transparent 50%, rgba(255,255,255,.19) 50%);
+        background-size: 210px, 320px, 220px, 153px;
+        margin-bottom:3px;
+        }
+
+        .guess div.item1{
+        -webkit-transform: scale3d(1, 1, 1) rotateZ(10deg) translateX(50px);
+        position: fixed;
+        bottom:150px;
+        width:100%;
+        transition-duration: 1s;
+        }
+        .guess div.item2{
+        -webkit-transform: scale3d(1, 1, 1) rotateZ(9deg) translateX(37px);
+        position: fixed;
+        bottom:100px;
+        width:100%;
+        transition-duration: 1s;
+        }
+        .guess div.item3{
+        -webkit-transform: scale3d(1, 1, 1) rotateZ(8deg) translateX(28px);
+        position: fixed;
+        bottom:50px;
+        width:100%;
+        transition-duration: 1s;
+        }
+        .guess div.item4{
+        -webkit-transform: scale3d(1, 1, 1) rotateZ(7deg) translateX(22px);
+        position: fixed;
+        bottom:0px;
+        width:100%;
+        transition-duration: 1s;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('.item').click(function(){
+                $(this).css({'-webkit-transform':'scale3d(1, 1, 1) rotateZ(0deg) translateX(0px)',
+                'position':'static'});
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="bamboo">
+
+</div>
+
+<div class="guess">
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div>啊啊啊啊啊</div>
+    <div class="item item1">唔唔唔唔唔</div>
+    <div class="item item2">哦哦哦哦哦</div>
+    <div class="item item3">呃呃呃呃呃</div>
+    <div class="item item4">一一一一一</div>
+</div>
+<div class="guess-holder"></div>
+</body>
+</html>
