@@ -26,7 +26,7 @@ public class BsController {
         List<Map<String, Object>> itemList = new ArrayList<Map<String, Object>>();
         int t = (int) (Math.random()*4);
         for (int i = 0; i < 4; i++) {
-            add(itemList, Math.random() + i==t?"*":"", i==t);
+            add(itemList, Math.random() + (i==t?"*":""), i==t);
         }
         result.put("data", itemList);
         result.put("success", true);
