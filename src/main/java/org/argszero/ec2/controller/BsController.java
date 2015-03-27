@@ -19,7 +19,7 @@ import java.util.Map;
 @RequestMapping("/bs")
 public class BsController {
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "get",method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> get(@RequestParam(required = false) Long id, @RequestParam(required = false) Long index, HttpSession session) {
         Map<String, Object> result = new HashMap<String, Object>();
@@ -27,7 +27,7 @@ public class BsController {
         for (int i = 0; i < 4; i++) {
             add(itemList, Math.random() + "", true);
         }
-        result.put("data", result);
+        result.put("data", itemList);
         result.put("success", true);
         return result;
     }
