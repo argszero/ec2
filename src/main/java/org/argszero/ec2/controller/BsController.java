@@ -24,8 +24,9 @@ public class BsController {
     public Map<String, Object> get(@RequestParam(required = false) Long id, @RequestParam(required = false) Long index, HttpSession session) {
         Map<String, Object> result = new HashMap<String, Object>();
         List<Map<String, Object>> itemList = new ArrayList<Map<String, Object>>();
+        int t = (int) (Math.random()*4);
         for (int i = 0; i < 4; i++) {
-            add(itemList, Math.random() + "", i==3);
+            add(itemList, Math.random() + i==t?"*":"", i==t);
         }
         result.put("data", itemList);
         result.put("success", true);
@@ -37,5 +38,12 @@ public class BsController {
         map.put("item", item);
         map.put("isTarget", isTarget);
         itemList.add(map);
+    }
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 100; i++) {
+            System.out.println( (int) (Math.random()*4));
+        }
+
     }
 }
