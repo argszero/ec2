@@ -25,7 +25,7 @@ public class BsController {
         Map<String, Object> result = new HashMap<String, Object>();
         List<Map<String, Object>> itemList = new ArrayList<Map<String, Object>>();
         for (int i = 0; i < 4; i++) {
-            add(itemList, Math.random() + "", true);
+            add(itemList, Math.random() + "", i==3);
         }
         result.put("data", itemList);
         result.put("success", true);
