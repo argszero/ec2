@@ -21,6 +21,7 @@ public class MyIpController {
     public Map<String, Object> get(HttpServletRequest request) {
         Map<String, Object> result = new HashMap<String, Object>();
         result.put("remoteAddr", request.getRemoteAddr());
+        result.put("remotePort", request.getRemotePort());
         result.put("X-Real-IP", request.getHeader("X-Real-IP"));
         result.put("X-Forwarded-For", request.getHeader("X-Forwarded-For"));
         result.put("Proxy-Client-IP", request.getHeader("Proxy-Client-IP"));
